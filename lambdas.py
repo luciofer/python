@@ -13,9 +13,9 @@ print("------------------------------------------")
 #Map - Returns a map object
 
 radius = [1, 2, 3, 4, 5]
-areas = map(lambda r: math.pi * (r ** 2), radius)
+area = map(lambda r: math.pi * (r ** 2), radius)
 
-print(list(areas))
+print(list(area))
 print(list(map(lambda r:  math.pi * (r ** 2), radius)))
 
 print("------------------------------------------")
