@@ -71,3 +71,45 @@ print(any(code2))
 
 
 print("------------------------------------------")
+
+names = ["Carl", "Cameron", "Cathy"]
+
+#Generator Vs List/Dict/Set Comprehension
+
+#Generator - It consumes less memory because it generates an object that can be used or not.
+# It does not store the result (data) in the memory right away, only the object.
+
+#Comprehension -> Already creates the list/dict/set in the memory.
+
+res = (x[0] == "C" for x in names )
+print(res)
+
+from sys import getsizeof
+
+#Check the number of bytes each solution utilizes
+
+list_comp = getsizeof([n * 10 for n in range(1000)])
+
+set_comp = getsizeof({n * 10 for n in range(1000)})
+
+dict_comp = getsizeof({n * 10 for n in range(1000)})
+
+generator = getsizeof((n * 10 for n in range(1000)))
+
+print("Consume of memory for the same task")
+
+print(f"List comprehension: {list_comp} bytes")
+print(f"Set comprehension: {set_comp} bytes")
+print(f"Dict comprehension: {dict_comp} bytes")
+print(f"Generator Expression: {generator} bytes")
+ 
+gen = (x for x in range(5))
+
+print(f"Generator object (iterable): {gen}")
+print(type(gen))
+
+for i in gen:
+    print(i)
+
+
+print("------------------------------------------")
