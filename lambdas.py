@@ -10,6 +10,9 @@ authors.sort(key= lambda surname: surname.split(" ")[-1].lower())
 print(authors)
 
 print("------------------------------------------")
+
+#Integrated functions
+
 #Map - It takes an iterable and returns a map object, applying the function
 # to each element of the iterable
 
@@ -35,3 +38,36 @@ countries = ["Brazil", "", "USA", "", "", "England", "Germany", "Japan", ""]
 filter_empty = filter(None , countries)
 
 print(list(filter_empty))
+print("------------------------------------------")
+#Reduce - It's not built-in anymore
+
+from functools import reduce
+
+data = [1, 2, 3, 4, 5]
+
+res = reduce(lambda x,y: x * y, data)
+
+print(res)
+print("------------------------------------------")
+
+#All() -> It returns true if all items of the iterable are true or if it's empty
+
+print(all([1, 2, 3, 4, 5]))
+print(all([0,1, 2, 3, 4, 5]))
+print(all([]))
+print(all('LF'))
+
+names = ["Carl", "Cameron", "Cathy"]
+print(all([name[0] == 'C' for name in names]))
+
+
+print("------------------------------------------")
+
+#Any() -> it returns true if any element is true. If it's empty it returns false
+code = [True, False, False]
+code2 = []
+print(any(code))
+print(any(code2))
+
+
+print("------------------------------------------")
